@@ -18,6 +18,8 @@ class EmployerFactory extends Factory
     {
         return [
             'name'=>fake()->company,
+            'phone'=>fake()->phoneNumber,
+            'description'=>fake()->text(50),
         ];
     }
 }
