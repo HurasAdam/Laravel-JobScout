@@ -69,14 +69,16 @@ Route::patch('jobs/{id}',function($id){
         'title'=>request('title'),
         'salary'=>request('salary')
     ]);
-return redirect("/jobs/$job->id");
+    return redirect('/jobs/'.$job->id);
+
 });
 
 
 //DESTROY
-Route::delete('jobs/{id}/edit',function($id){
-    $job = Job::find($id);
-return view('jobs.edit',['job'=>$job]);
+Route::delete('jobs/{id}',function($id){
+    $job = Job::findOrFail($id);
+    $job->delete();
+    return redirect("/jobs");
 });
 
 
