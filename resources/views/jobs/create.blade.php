@@ -28,41 +28,11 @@
 </div>
 
 
-<div class="sm:col-span-4">
-    <label for="currency" class="block text-sm font-medium leading-6 text-gray-900">Currency</label>
-    <div class="mt-2">
-        <div class="flex justify-between  sm:max-w-md gap-5">
-            <!-- USD Option -->
-            <div class="relative flex-1 rounded-md shadow-sm ring-1  ring-gray-300">
-                <input type="radio" id="USD" name="currency" value="USD" class="hidden peer" {{ old('currency') == 'USD' ? 'checked' : '' }}>
-                <label for="USD" class="text-center block  cursor-pointer w-full peer-checked:bg-slate-700 peer-checked:text-white peer-checked:border-black  peer-checked:rounded-md p-2">
-                    USD
-                </label>
-            </div>
-            <!-- PLN Option -->
-            <div class="relative flex-1 rounded-md shadow-sm ring-1  ring-gray-300">
-                <input type="radio" id="PLN" name="currency" value="PLN" class="hidden peer" {{ old('currency') == 'PLN' ? 'checked' : '' }}>
-                <label for="PLN" class=" text-center block cursor-pointer w-full peer-checked:bg-slate-700 peer-checked:text-white peer-checked:border-black  peer-checked:rounded-md p-2">
-                    PLN
-                </label>
-            </div>
-            <!-- EUR Option -->
-            <div class="relative flex-1 rounded-md shadow-sm ring-1  ring-gray-300">
-                <input type="radio" id="EUR" name="currency" value="EUR" class="hidden peer" {{ old('currency') == 'EUR' ? 'checked' : '' }}>
-                <label for="EUR" class="text-center block cursor-pointer w-full peer-checked:bg-slate-700 peer-checked:text-white peer-checked:border-black  peer-checked:rounded-md p-2">
-                    EUR
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
+
 
           
-            @error("salary")
-           <p class="text-red-500 font-semibold text-xs"> {{$message}}</p>
-            @enderror
-          </div>
-        </div>
+      
+        
 
 
 
