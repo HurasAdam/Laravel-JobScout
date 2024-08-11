@@ -10,48 +10,33 @@
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
-                        <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
-                        <div class="mt-2">
-                            <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input
-                                    type="text"
-                                    name="title"
-                                    id="title"
-                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="Shift Leader"
-                                    value="{{ $job->title }}"
-                                    required>
-                            </div>
 
-                            @error('title')
-                                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
+            <x-form-field>
+            <x-form-label label="title" for="title"/>
+                    
+            <x-form-input
+                    type='text'
+                    name='title'
+                    id='title'
+                    value="{{ $job->title}}"
+                    placeholder="Senior Backend Developer"
+                    />
 
-                    <div class="sm:col-span-4">
-                        <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
-                        <div class="mt-2">
-                            <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
-                            >
-                                <input
-                                    type="text"
-                                    name="salary"
-                                    id="salary"
-                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="$50,000 Per Year"
-                                    value="{{ $job->salary }}"
-                                    required>
-                            </div>
+            <x-form-error name="title"/>
+</x-form-field>
 
-                            @error('salary')
-                                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
+<x-form-field>
+            <x-form-label label="salary" for="salary"/>
+                    
+            <x-form-input
+                    type='text'
+                    name='salary'
+                    id='salary'
+                    value="{{ $job->salary}}"
+                    />
+
+            <x-form-error name="salary"/>
+</x-form-field>
                 </div>
             </div>
         </div>

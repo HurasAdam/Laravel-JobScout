@@ -1,4 +1,4 @@
-@props(['class','href'])
+@props(['class'=>null,'href'])
 
 
 @php
