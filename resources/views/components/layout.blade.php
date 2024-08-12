@@ -39,14 +39,21 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
-                @guest
-                <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
-                <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
-                @endguest
+                            @guest
+                                <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
+                                <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                            @endguest
+                            @auth
 
-                          
-                  
-                           
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <x-form-button label="Log Out" />
+                                </form>
+
+                            @endauth
+
+
+
                         </div>
                     </div>
                     <div class="-mr-2 flex md:hidden">
@@ -111,9 +118,9 @@
         <header class="bg-white shadow">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
-              <x-button 
-              class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-slate-100 hover:bg-indigo-900 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300"
-              href="/jobs/create">Create Job</x-button>
+                <x-button
+                    class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-slate-100 hover:bg-indigo-900 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300"
+                    href="/jobs/create">Create Job</x-button>
             </div>
         </header>
 
