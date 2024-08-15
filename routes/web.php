@@ -3,14 +3,23 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Mail\JobPosted;
+use App\Models\Job;
 
 
 
     Route::view("/","home");
     Route::view("/contact","contact");
+
+
+    Route::get("/test",function(){
+        $job = Job::first();
+TranslateJob::dispatch($job);
+return 'Done';
+    });
 
 
     Route::get('/jobs',[JobController::class, 'index']);
