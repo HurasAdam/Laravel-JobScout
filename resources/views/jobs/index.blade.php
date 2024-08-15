@@ -8,7 +8,7 @@
                 {{ $job->employer->name }}
             </div>
             <a href="/jobs/{{ $job['id'] }}" class="block px-5 py-6 border border-gray-200 rounded-lg">
-                <b>{{ $job['title'] }}</b>:Pays {{ $job['salary'] }}per year
+                <b class="text-main">{{ $job['title'] }}</b>:Pays {{ $job['salary'] }}per year
             </a>
         @endforeach
         <div>
